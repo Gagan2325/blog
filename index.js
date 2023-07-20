@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const mongoose = require('mongoose');
 const blog = require('./routes/blog');
-
+app.use(express.static(path.join(__dirname, 'uploads')))
 require('dotenv').config();
 require('./db/db');
 
